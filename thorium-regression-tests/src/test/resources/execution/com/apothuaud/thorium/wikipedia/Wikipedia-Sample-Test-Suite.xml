@@ -1,0 +1,10 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Google Sample Thorium Test Suite">
+
+    <test name = "Sample Test on Google">
+        <classes>
+            <class name = "com.apothuaud.thorium.wikipedia.scenarios.Sample" />
+        </classes>
+    </test>
+</suite>
