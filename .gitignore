@@ -6,6 +6,7 @@
 # Intellij
 .idea
 .idea/
+.idea/*
 *.iml
 *.iws
 
