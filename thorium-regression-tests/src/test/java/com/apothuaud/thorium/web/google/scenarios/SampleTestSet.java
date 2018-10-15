@@ -4,7 +4,7 @@ import com.apothuaud.thorium.framework.test.WebTestSet;
 import com.apothuaud.thorium.google.pages.HomePage;
 import org.testng.annotations.Test;
 
-public class Sample extends WebTestSet {
+public class SampleTestSet extends WebTestSet {
 
     @Test
     public void searchAndVerifyFirstResult() {
