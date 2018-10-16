@@ -1,0 +1,13 @@
+<suite name="Google Suite">
+
+    <test name="Search">
+
+        <classes>
+
+            <class name="com.apothuaud.selenium.google.tests.SampleTestSet" />
+
+        </classes>
+
+    </test>
+
+</suite>

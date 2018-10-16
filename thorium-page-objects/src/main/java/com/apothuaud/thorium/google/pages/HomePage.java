@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+@SuppressWarnings({"WeakerAccess", "FieldCanBeLocal", "unused"})
 public class HomePage extends WebPageObject {
 
     @FindBy(id = "lst-ib")
@@ -13,14 +14,10 @@ public class HomePage extends WebPageObject {
     @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div[1]/div/div/div[1]/a")
     private WebElement link_first_result;
 
-    private String url = "http://www.google.com";
-
-    public String getUrl() {
-        return url;
-    }
+    private static String url = "http://www.google.com";
 
     public HomePage openPage() {
-        this.driver.navigate().to(this.getUrl());
+        this.driver.navigate().to(getUrl());
         this.driver.manage().window().maximize();
         return this;
     }
@@ -34,7 +31,7 @@ public class HomePage extends WebPageObject {
     }
 
     public HomePage verifyFirstResultIsLinkedInProfileOf(String profile) {
-        String link = link_first_result.getAttribute("href").toString();
+        String link = link_first_result.getAttribute("href");
         Assert.assertTrue(link.contains("linkedin"));
         Assert.assertTrue(link.contains(profile.toLowerCase().replace(" ", "-")));
         return this;

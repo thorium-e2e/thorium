@@ -7,16 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+@SuppressWarnings({"WeakerAccess", "FieldCanBeLocal", "unused"})
 public class WebPageObject {
 
+    private static String url;
     protected WebDriver driver;
     private WebDriverWait wait;
 
     public WebPageObject() {
         // ToDo: Read config from json file
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "bin/chromedriver");
         this.driver = new ChromeDriver();
         PageFactory.initElements(driver, this);
+    }
+
+    public static String getUrl() {
+        return url;
     }
 
     public void quit() {

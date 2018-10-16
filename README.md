@@ -1,10 +1,18 @@
-# Project Title
+# Thorium
 
-One Paragraph of project description goes here
+An end-to-end automation testing framework. Enables easier regression testing for either mobile apps, web apps or apis.
+
+Thorium is made to simplify to the limits regression testing in a java environment.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+1. Install Java 8
+2. Install Maven 3
+3. Install IntelliJ IDEA
+4. Fork the project on GitLab
+5. Clone to local hard drive
+6. Import the project to IntelliJ IDEA
+7. Run mvn test
 
 ### Prerequisites
 
