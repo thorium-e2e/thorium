@@ -18,6 +18,8 @@
         <module>thorium-regression-tests</module>
         <module>selenium-page-objects</module>
         <module>selenium-regression-tests</module>
+        <module>rest-assured-regression-tests</module>
+        <module>selenium-grid</module>
     </modules>
 
     <build>
