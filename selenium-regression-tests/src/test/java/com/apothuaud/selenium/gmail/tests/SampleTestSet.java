@@ -11,18 +11,14 @@ public class SampleTestSet {
 
     // ToDo: create accounts enum
     private Account automAccount1 = new Account(
-        "apothuaud-autom-user-1@gmail.com",
+        "adrianpothuaud@gmail.com",
         "AP@@sswo!rd123"
     );
 
     // ToDo: Account provider (existing/not)
     @Test(
             groups = { "Gmail", "Sample" },
-            //dataProviderClass = com.apothuaud.selenium.google.QueryProvider.class,
-            //dataProvider = "getGoogleQueries",
-            description = "Sample Test for Gmail Pages",
-            priority = 5,
-            successPercentage = 80
+            description = "Sample Test for Gmail Pages"
     )
     public void test_story_1() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/bin/chromedriver");

@@ -68,10 +68,12 @@ public class GMHomePage {
         this.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         this.driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, this);
+        System.out.println("Openned page " + this.getClass().getName() + " @ " + this.url);
         return this;
     }
 
     public void quit() {
+        System.out.println("Quit " + this.getClass().getName());
         this.driver.close();
         this.driver.quit();
     }
@@ -110,17 +112,21 @@ public class GMHomePage {
     }
 
     public GMHomePage sendMail(String receiver, String subject, String content) {
+        System.out.println(this.getClass().getName() + " Send email ... ");
         btn_compose.click();
         waitForVisibilityOfElement(input_receiver);
+        System.out.println("Mail composer appeared");
         input_receiver.click();
         input_receiver.sendKeys(receiver);
         input_subject.click();
         input_subject.sendKeys(subject);
         input_message.sendKeys(content);
+        System.out.println("Message composed");
         btn_send.click();
         wait = new WebDriverWait(this.driver, 10);
         ExpectedCondition<Boolean> cdtn = ExpectedConditions.invisibilityOf(input_receiver);
         wait.until(cdtn);
+        System.out.println("Mail composer disappeared");
         return this;
     }
 }

@@ -34,6 +34,12 @@ public class GMLoginPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"password\"]/div[1]/div/div[1]/input")
     private WebElement input_password;
 
+    @FindBy(how = How.ID, using = "identifierNext")
+    private WebElement btn_idNext;
+
+    @FindBy(how = How.ID, using = "passwordNext")
+    private WebElement btn_passNext;
+
     /*
         Methods
      */
@@ -48,10 +54,12 @@ public class GMLoginPage {
         this.driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         this.driver.manage().timeouts().setScriptTimeout(20, TimeUnit.SECONDS);
         PageFactory.initElements(driver, this);
+        System.out.println("Openned page " + this.getClass().getName() + " @ " + this.url);
         return this;
     }
 
     public void quit() {
+        System.out.println("Quit " + this.getClass().getName());
         this.driver.close();
         this.driver.quit();
     }
@@ -64,10 +72,17 @@ public class GMLoginPage {
 
     // SPECIFIC
     public void login(Account account) {
+        System.out.println(this.getClass().getName() + " Login ...");
         this.waitForEmailField();
+        System.out.println("Email field found");
         this.typeEmail(account);
+        System.out.println("Email field input");
+        btn_idNext.click();
         this.waitForPasswordField();
+        System.out.println("Password field found");
         this.typePassword(account);
+        System.out.println("Password field input");
+        btn_passNext.click();
     }
 
     private void typePassword(Account account) {
