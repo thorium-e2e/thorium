@@ -1,6 +1,7 @@
 package com.apothuaud.selenium.anydo.tests.scenarios;
 
 import com.apothuaud.selenium.anydo.Account;
+import com.apothuaud.selenium.anydo.pages.AnyDoGuestHomePage;
 import org.testng.annotations.Test;
 
 public class AnyDoScn1 {
