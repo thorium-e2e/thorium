@@ -1,4 +1,4 @@
-package com.apothuaud.thorium.framework.test;
+package com.apothuaud.thorium.framework;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;

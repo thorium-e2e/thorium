@@ -1,6 +1,6 @@
 package com.apothuaud.thorium.web.google.scenarios;
 
-import com.apothuaud.thorium.framework.test.WebTestSet;
+import com.apothuaud.thorium.framework.WebTestSet;
 import com.apothuaud.thorium.google.pages.HomePage;
 import org.testng.annotations.Test;
 

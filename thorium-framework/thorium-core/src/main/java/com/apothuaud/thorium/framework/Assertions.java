@@ -1,4 +1,4 @@
-package com.apothuaud.thorium.framework.test;
+package com.apothuaud.thorium.framework;
 
 public class Assertions {
 

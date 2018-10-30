@@ -20,6 +20,7 @@
         <module>selenium-regression-tests</module>
         <module>rest-assured-regression-tests</module>
         <module>selenium-grid</module>
+        <module>rest-assured-models</module>
     </modules>
 
     <build>
