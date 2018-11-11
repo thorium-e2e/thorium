@@ -2,11 +2,7 @@
 
     <test name="Search">
 
-        <classes>
-
-            <class name="com.apothuaud.selenium.google.tests.SampleTestSet" />
-
-        </classes>
+        <package>com.apothuaud.selenium.clickclack.web.tests</package>
 
     </test>
 

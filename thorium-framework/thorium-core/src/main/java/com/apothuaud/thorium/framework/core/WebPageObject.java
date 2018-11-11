@@ -16,7 +16,7 @@ public class WebPageObject {
 
     public WebPageObject() {
         // ToDo: Read config from json file
-        System.setProperty("webdriver.chrome.driver", "bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
         this.driver = new ChromeDriver();
         PageFactory.initElements(driver, this);
     }
