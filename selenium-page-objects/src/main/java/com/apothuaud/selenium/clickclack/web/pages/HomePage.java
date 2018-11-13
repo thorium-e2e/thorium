@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class HomePage extends PageObject {
@@ -25,13 +26,16 @@ public class HomePage extends PageObject {
     @FindBy(className = "content-list-item")
     List<WebElement> li_contentItems;
 
+    @FindBy(id = "link-list-clacks")
+    WebElement lnk_listClacks;
+
     @FindBy(id = "content-info")
     WebElement div_contentInfo;
 
-    public static String url = "https://rec-clickclack-web.herokuapp.com/";
+    public static String url = "/";
 
-    public HomePage(WebDriver driver) {
-        super(driver);
+    public HomePage(WebDriver driver, HashMap env) {
+        super(driver, env);
     }
 
     public HomePage openPage() {
@@ -49,7 +53,13 @@ public class HomePage extends PageObject {
         Assert.assertTrue(div_intro.isDisplayed());
         Assert.assertTrue(div_content.isDisplayed());
         Assert.assertTrue(div_contentList.isDisplayed());
+        Assert.assertTrue(lnk_listClacks.isDisplayed());
         Assert.assertTrue(div_contentInfo.isDisplayed());
+        return this;
+    }
+
+    public HomePage gotoListPage() throws InterruptedException {
+        lnk_listClacks.click();
         return this;
     }
 }

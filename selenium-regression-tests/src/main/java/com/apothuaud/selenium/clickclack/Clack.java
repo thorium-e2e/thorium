@@ -22,4 +22,8 @@ public class Clack {
     public void setAttributes(Map<String, String> attributes) {
         this.attributes = attributes;
     }
+
+    public String getID() {
+        return attributes.get("id");
+    }
 }

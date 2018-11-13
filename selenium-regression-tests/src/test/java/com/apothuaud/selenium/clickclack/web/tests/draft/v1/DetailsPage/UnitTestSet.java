@@ -1,7 +1,7 @@
-package com.apothuaud.selenium.clickclack.web.tests.draft.v1.UpdatePage;
+package com.apothuaud.selenium.clickclack.web.tests.draft.v1.DetailsPage;
 
 import com.apothuaud.selenium.clickclack.Clack;
-import com.apothuaud.selenium.clickclack.web.pages.ClackUpdatePage;
+import com.apothuaud.selenium.clickclack.web.pages.ClackDetailsPage;
 import com.apothuaud.selenium.samples.common.TestSet;
 import org.testng.annotations.Test;
 
@@ -24,15 +24,15 @@ public class UnitTestSet extends TestSet {
             testClackAttrs
     );
 
-    // 1 Clacks update page open and have attributes and form
+    // 1 Clacks details page open and have attributes
     @Test(
             suiteName = "Unit tests",
-            testName = "I can open Clacks update page with success",
-            description = "I can open clacks update page and see header and content",
+            testName = "I can open Clacks details page with success",
+            description = "I can open clacks details page and see header and content",
             groups = { "unit", "dev", "rec", "prod" }
     )
-    public void testOpenClackUpdatePage(){
-        new ClackUpdatePage(driver, testClack.getID(), env)
+    public void testOpenClackDetailsPage(){
+        new ClackDetailsPage(driver, testClack.getID(), env)
                 .openPage()
                 .verifyHeader()
                 .verifyContent()

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class ClacksPage extends PageObject {
@@ -28,10 +29,10 @@ public class ClacksPage extends PageObject {
     @FindBy(id = "no-clacks")
     WebElement err_noClacks;
 
-    public static String url = "https://rec-clickclack-web.herokuapp.com/";
+    public static String url = "/clacks";
 
-    public ClacksPage(WebDriver driver) {
-        super(driver);
+    public ClacksPage(WebDriver driver, HashMap env) {
+        super(driver, env);
     }
 
     public ClacksPage openPage() {
@@ -40,7 +41,7 @@ public class ClacksPage extends PageObject {
     }
 
     public ClacksPage verifyHeader() {
-        Assert.assertEquals(driver.getTitle(), "ClickClack");
+        Assert.assertEquals(driver.getTitle(), "Clacks");
         return this;
     }
 
@@ -49,6 +50,16 @@ public class ClacksPage extends PageObject {
         Assert.assertTrue(lnk_home.isDisplayed());
         Assert.assertTrue(lnk_create.isDisplayed());
         Assert.assertTrue(ul_clacksList.isDisplayed());
+        return this;
+    }
+
+    public ClacksPage gotoHomePage() {
+        lnk_home.click();
+        return this;
+    }
+
+    public ClacksPage gotoCreatePage() {
+        lnk_create.click();
         return this;
     }
 }

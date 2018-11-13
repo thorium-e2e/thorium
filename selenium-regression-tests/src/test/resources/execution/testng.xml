@@ -1,8 +1,36 @@
-<suite name="Google Suite">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-    <test name="Search">
+<suite name="ClickClack Web Draft v1">
 
-        <package>com.apothuaud.selenium.clickclack.web.tests</package>
+    <test name="New Features">
+
+        <classes>
+
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.CreatePage.UnitTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.CreatePage.IntegrationTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.CreatePage.FunctionalTestSet" />
+
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.DeletePage.UnitTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.DeletePage.IntegrationTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.DeletePage.FunctionalTestSet" />
+
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.DetailsPage.UnitTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.DetailsPage.IntegrationTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.DetailsPage.FunctionalTestSet" />
+
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.HomePage.UnitTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.HomePage.IntegrationTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.HomePage.FunctionalTestSet" />
+
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.ListPage.UnitTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.ListPage.IntegrationTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.ListPage.FunctionalTestSet" />
+
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.UpdatePage.UnitTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.UpdatePage.IntegrationTestSet" />
+            <class name="com.apothuaud.selenium.clickclack.web.tests.draft.v1.UpdatePage.FunctionalTestSet" />
+
+        </classes>
 
     </test>
 

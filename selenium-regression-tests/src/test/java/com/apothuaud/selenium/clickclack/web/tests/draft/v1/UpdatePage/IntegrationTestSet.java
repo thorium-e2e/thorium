@@ -2,13 +2,12 @@ package com.apothuaud.selenium.clickclack.web.tests.draft.v1.UpdatePage;
 
 import com.apothuaud.selenium.clickclack.web.pages.ClacksPage;
 import com.apothuaud.selenium.clickclack.web.pages.HomePage;
-import com.apothuaud.selenium.samples.common.TestSet;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FunctionalTestSet extends TestSet {
+public class IntegrationTestSet {
 
-    /*// 2.2 add fields in update clack form
+    /*// 1.2.5 From Clack update page I can go to Clacks List page
     @Test(
             suiteName = "Integration tests",
             testName = "Access to Home page from List page",
