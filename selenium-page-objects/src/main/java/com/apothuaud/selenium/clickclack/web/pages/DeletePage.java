@@ -8,6 +8,7 @@ import org.testng.Assert;
 
 import java.util.HashMap;
 
+@SuppressWarnings("UnusedReturnValue")
 public class DeletePage extends PageObject {
 
     @FindBy(id = "confirm-delete-label")
@@ -19,7 +20,10 @@ public class DeletePage extends PageObject {
     @FindBy(className = "button-create")
     WebElement btn_create;
 
-    public static String url = "/clacks/clackId/delete_confirm";
+    @FindBy(className = "button-link")
+    WebElement lnk_listPage;
+
+    public String url = "/clacks/clackId/delete_confirm";
 
     public String getId() {
         return id;
@@ -31,20 +35,27 @@ public class DeletePage extends PageObject {
 
     private String id;
 
-    private void setUrl(String u){
-        url = u;
+    private void setUrl(String domain, String id){
+        System.out.println("Making Delete Page url with: domain=" + domain + " and id=" + id);
+        this.url = domain + "/clacks/" + id + "/delete_confirm";
+    }
+
+    private String getUrl(){
+        return url;
     }
 
     public DeletePage(WebDriver driver, HashMap env, String id) {
-
         super(driver, env);
-        setUrl(env.get("domain") + url.replace("clackId", id));
+
+        System.out.println("Creation of Delete Page with {'env.domain': " + env.get("domain") + "; 'id': " + id + "}");
+
+        setUrl(env.get("domain").toString(), id);
         setId(id);
     }
 
     public DeletePage openPage() {
         System.out.println("Open page with url: " + url);
-        driver.get(url);
+        driver.get(getUrl());
         return this;
     }
 
@@ -57,6 +68,21 @@ public class DeletePage extends PageObject {
         Assert.assertTrue(lbl_confirmDelete.isDisplayed());
         Assert.assertTrue(btn_create.isDisplayed());
         Assert.assertTrue(btn_delete.isDisplayed());
+        return this;
+    }
+
+    public DeletePage gotoListPage() {
+        lnk_listPage.click();
+        return this;
+    }
+
+    public DeletePage refuse() {
+        btn_delete.click();
+        return this;
+    }
+
+    public DeletePage accept() {
+        btn_create.click();
         return this;
     }
 }

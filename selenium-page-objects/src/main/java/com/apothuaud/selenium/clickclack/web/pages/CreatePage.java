@@ -20,6 +20,9 @@ public class CreatePage extends PageObject {
     @FindBy(id = "btn-rm-fields")
     WebElement btn_rmFields;
 
+    @FindBy(className = "button-submit")
+    WebElement btn_submit;
+
     @FindBy(id = "lnk-clacks")
     WebElement lnk_clacksPage;
 
@@ -67,6 +70,11 @@ public class CreatePage extends PageObject {
 
     public CreatePage gotoListPage() {
         lnk_clacksPage.click();
+        return this;
+    }
+
+    public CreatePage createEmpty() {
+        btn_submit.click();
         return this;
     }
 }

@@ -8,8 +8,6 @@ public class FunctionalTestSet extends TestSet {
 
     // 1. add fields in create clack form
     @Test(
-            suiteName = "Functional tests",
-            testName = "add fields in create clack form",
             description = "I can add fields in create clack form",
             groups = { "fun", "dev", "rec", "prod" }
     )
@@ -23,8 +21,6 @@ public class FunctionalTestSet extends TestSet {
 
     // 1. remove fields in create clack form
     @Test(
-            suiteName = "Functional tests",
-            testName = "remove fields in create clack form",
             description = "I can remove fields in create clack form",
             groups = { "fun", "dev", "rec", "prod" },
             dependsOnMethods = "testCreateFormAddFields"
