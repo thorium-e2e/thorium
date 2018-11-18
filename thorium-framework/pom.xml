@@ -19,7 +19,6 @@
         <module>thorium-core</module>
         <module>thorium-logger</module>
         <module>thorium-reporter</module>
-        <module>thorium-test-runner</module>
         <module>thorium-listeners</module>
     </modules>
 

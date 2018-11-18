@@ -15,7 +15,7 @@ public class WebPageObject {
     private WebDriverWait wait;
 
     public WebPageObject() {
-        // ToDo: Read config from json file
+        // ToDo: Read config from json file => see selenium common
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
         this.driver = new ChromeDriver();
         PageFactory.initElements(driver, this);

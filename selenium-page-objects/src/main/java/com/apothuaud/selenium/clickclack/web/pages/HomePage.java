@@ -1,14 +1,16 @@
 package com.apothuaud.selenium.clickclack.web.pages;
 
-import com.apothuaud.selenium.samples.common.PageObject;
+import com.apothuaud.selenium.common.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.pmw.tinylog.Logger;
 import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class HomePage extends PageObject {
 
     @FindBy(id = "title")
@@ -32,19 +34,19 @@ public class HomePage extends PageObject {
     @FindBy(id = "content-info")
     WebElement div_contentInfo;
 
-    public static String url = "/";
-
     public HomePage(WebDriver driver, HashMap env) {
         super(driver, env);
+        setUrl(getEnv().get("domain") + "/");
     }
 
     public HomePage openPage() {
-        driver.get(url);
+        System.out.println("Open page: " + getClass().getName() + " with url: " + getUrl());
+        getDriver().get(getUrl());
         return this;
     }
 
     public HomePage verifyHeader() {
-        Assert.assertEquals(driver.getTitle(), "ClickClack");
+        Assert.assertEquals(getDriver().getTitle(), "ClickClack");
         return this;
     }
 
@@ -58,7 +60,8 @@ public class HomePage extends PageObject {
         return this;
     }
 
-    public HomePage gotoListPage() throws InterruptedException {
+    public HomePage gotoListPage() {
+        System.out.println("going to ListPage from: " + getClass().getName());
         lnk_listClacks.click();
         return this;
     }
