@@ -12,28 +12,29 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>thorium-endpoints</module>
+        <!--<module>thorium-endpoints</module>
         <module>thorium-framework</module>
         <module>thorium-page-objects</module>
-        <module>thorium-regression-tests</module>
+        <module>thorium-regression-tests</module>-->
         <module>selenium-page-objects</module>
         <module>selenium-regression-tests</module>
-        <module>rest-assured-regression-tests</module>
+        <!--<module>rest-assured-regression-tests</module>
         <module>selenium-grid</module>
         <module>rest-assured-models</module>
         <module>appium-page-objects</module>
-        <module>appium-regression-tests</module>
+        <module>appium-regression-tests</module>-->
     </modules>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>selenium-regression-tests/src/test/resources/execution/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
