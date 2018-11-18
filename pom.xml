@@ -21,6 +21,8 @@
         <module>rest-assured-regression-tests</module>
         <module>selenium-grid</module>
         <module>rest-assured-models</module>
+        <module>appium-page-objects</module>
+        <module>appium-regression-tests</module>
     </modules>
 
     <build>
