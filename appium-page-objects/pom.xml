@@ -11,5 +11,11 @@
 
     <artifactId>appium-page-objects</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>6.1.0</version>
+        </dependency>
+    </dependencies>
 </project>
