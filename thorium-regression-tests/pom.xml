@@ -6,7 +6,7 @@
 
     <parent>
         <artifactId>thorium</artifactId>
-        <groupId>com.apothuaud</groupId>
+        <groupId>com.thorium</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
