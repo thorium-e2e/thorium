@@ -1,5 +1,7 @@
 package com.thorium.appium.clickclack.android.tests.draft.v1;
 
+import com.thorium.appium.clickclack.android.pages.ClackUpdatePage;
+import com.thorium.appium.clickclack.android.pages.ClacksCreatePage;
 import com.thorium.appium.clickclack.android.pages.ClacksListPage;
 import com.thorium.appium.clickclack.android.pages.HomePage;
 import io.appium.java_client.android.AndroidDriver;
@@ -15,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 public class EndToEndTestSet {
 
-    private AndroidDriver mobiledriver;
+    private AndroidDriver mobileDriver;
 
     @BeforeClass
     public void prepareTests() throws MalformedURLException {
@@ -25,20 +27,28 @@ public class EndToEndTestSet {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"Appium");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_API_24");
-        capabilities.setCapability(MobileCapabilityType.APP, "/Users/adrian/GitHub/thorium/appium-regression-tests/src/test/resources/apk/app-debug.apk");
-        mobiledriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-        mobiledriver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        mobiledriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        capabilities.setCapability(MobileCapabilityType.APP, "/Users/adrian/GitHub/clickclack-android/app/build/outputs/apk/debug/app-debug.apk");
+        mobileDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        mobileDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 
     @Test(
             groups = {"e2e"},
-            description = "CRUD Clack"
+            description = "I can CRUD Clacks"
     )
-    public void CRUDClack() {
-        new HomePage(mobiledriver)
+    public void testCRUDClack() {
+        new HomePage(mobileDriver)
                 .gotoClacks();
-        new ClacksListPage(mobiledriver)
-                .gotoDetailsFirstClack();
+        new ClacksListPage(mobileDriver)
+                .gotoCreateClack();
+        new ClacksCreatePage(mobileDriver)
+                .send();
+        new ClacksListPage(mobileDriver)
+                .gotoUpdateFirstClack();
+        new ClackUpdatePage(mobileDriver)
+                .addFields()
+                .send();
+        new ClacksListPage(mobileDriver)
+                .gotoDeleteFirstClack();
     }
 }
